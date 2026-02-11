@@ -2,13 +2,16 @@ extends CharacterBody2D
 
 const SPEED = 50.0
 var last_movement_key:Key;
+var lock_animation:bool
+var input_controller:InputController
 
 @onready var glow = get_node("Glow")
 @onready var animation = get_node("AnimatedSprite2D")
 @onready var collider = get_node("CollisionShape2D")
 
 func _init() -> void:
-	pass
+	lock_animation = false
+	input_controller = InputController.new(animation)
 	
 func _process(delta: float) -> void:
 	pass
@@ -27,6 +30,7 @@ func _physics_process(delta: float) -> void:
 	var x_dir := Input.get_axis("ui_left", "ui_right")
 	var y_dir := Input.get_axis("ui_up", "ui_down")
 	
+	print(input_controller.get_movement_key_stack().get(0))
 	if   x_dir > 0:
 		velocity.x = SPEED
 		animation.flip_h = false
