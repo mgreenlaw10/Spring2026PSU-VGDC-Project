@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bhw0b7y6lous4"]
+
+[ext_resource type="Script" uid="uid://blr11hikpwdwu" path="res://wall.gd" id="1_xxgf6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oh6kn"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_y4f30"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=954460910]
+script = ExtResource("1_xxgf6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2110702166]
+shape = SubResource("RectangleShape2D_oh6kn")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1319942049]
+occluder = SubResource("OccluderPolygon2D_y4f30")
