@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="movement-test"
+config/name="template2drpg"
 run/main_scene="uid://b7jfha8s02opn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
