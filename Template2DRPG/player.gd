@@ -25,6 +25,13 @@ func _unhandled_input(event:InputEvent) -> void:
 		elif event.is_released() and is_movement_key(event.keycode):
 			input_controller.set_off(event.keycode)
 			
+		# interact
+		if event.pressed and event.keycode == KEY_E:
+			var interact_zones = get_tree().get_nodes_in_group("interact_zones")
+			for zone:InteractZone in interact_zones:
+				if zone.overlaps_body(self as CharacterBody2D):
+					zone.activate()
+			
 
 func _physics_process(delta: float) -> void:
 	var x_dir:float = Input.get_axis("ui_left", "ui_right")

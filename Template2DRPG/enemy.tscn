@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cdfcwk35ktrtl" path="res://Hana Caraka - Base Character/Premade Character/Chef/chef - idle.png" id="1_4gyqm"]
 [ext_resource type="Script" uid="uid://cv7m6fj8qkp0d" path="res://enemy.gd" id="1_qi2p4"]
 [ext_resource type="Texture2D" uid="uid://cq8k3cfg4cggd" path="res://Hana Caraka - Base Character/Premade Character/Chef/chef - walk.png" id="2_qi2p4"]
+[ext_resource type="Script" uid="uid://bea45isdisyi0" path="res://interact_zone.gd" id="4_iifgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iifgy"]
 atlas = ExtResource("1_4gyqm")
@@ -289,6 +290,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epg4t"]
+size = Vector2(15, 16)
+
 [node name="Enemy" type="Node2D" unique_id=124236039]
 script = ExtResource("1_qi2p4")
 
@@ -297,3 +301,10 @@ sprite_frames = SubResource("SpriteFrames_jpbtr")
 animation = &"walk_down"
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=553026980]
+
+[node name="InteractZone" type="Area2D" parent="." unique_id=1959167628]
+script = ExtResource("4_iifgy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractZone" unique_id=1736443503]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_epg4t")

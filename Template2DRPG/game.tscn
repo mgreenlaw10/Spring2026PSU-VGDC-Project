@@ -19,7 +19,6 @@ zoom = Vector2(4, 4)
 script = ExtResource("2_btwlb")
 
 [node name="Floortexture" type="Sprite2D" parent="." unique_id=1183379089]
-visible = false
 z_index = -1
 texture_repeat = 2
 position = Vector2(594, 237)
